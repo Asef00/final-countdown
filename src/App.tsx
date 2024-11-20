@@ -27,7 +27,7 @@ function App() {
     <>
       <ThemeProvider theme={defaultTheme}>
         <Container>
-          <Card sx={{ maxWidth: 1000, textAlign: 'center' }}>
+          <Card sx={{ maxWidth: 1000, textAlign: 'center', margin: 'auto' }}>
             <CardContent>
               <Typography
                 textTransform={'uppercase'}
