@@ -47,6 +47,7 @@ function App() {
                   id="name"
                   label="Name"
                   variant="outlined"
+                  onChange={(e) => setName(e.target.value)}
                 />
                 <Button variant="contained">Set Name</Button>
               </Stack>
