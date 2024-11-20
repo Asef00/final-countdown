@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import './App.css'
 import {
   Button,
@@ -22,6 +22,11 @@ const defaultTheme = createTheme({
 
 function App() {
   const [name, setName] = useState('')
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  const handleSubmit = () => {
+    setName(inputRef.current?.value ?? '')
+  }
 
   return (
     <>
@@ -47,9 +52,11 @@ function App() {
                   id="name"
                   label="Name"
                   variant="outlined"
-                  onChange={(e) => setName(e.target.value)}
+                  inputRef={inputRef}
                 />
-                <Button variant="contained">Set Name</Button>
+                <Button variant="contained" onClick={handleSubmit}>
+                  Set Name
+                </Button>
               </Stack>
             </CardContent>
           </Card>
